@@ -1,0 +1,16 @@
+{
+  "name": "mqttbb",
+  "version": "0.0.1",
+  "description": "MQTT barebones",
+  "dependencies": {
+    "aws-iot-device-sdk-v2": "^1.17.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "grep-endpoint": "egrep -o '[-][-]endpoint\\s+\\S+' keys-go-here/start.sh | egrep -o '\\S+$'",
+    "root-ca": "bash -c 'pushd keys-go-here && curl -O https://www.amazontrust.com/repository/AmazonRootCA1.pem && popd'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yakc@users.noreply.github.com"
+}
