@@ -19,7 +19,9 @@ This project makes the usage more obvious
   subdirectory
 - Uses [dotenv](https://github.com/motdotla/dotenv) for the other config values
 - Provides a helper to create the connection, using those keys
-- Offers a variation on the pub/sub example
+- Offers two variations on the pub/sub example
+  - Bare minimum to send and receive a single message
+  - A more complex object that orchestrates multiple messages
 
 ## Running
 
@@ -29,23 +31,25 @@ Tested with Node v18.18.0
    ```bash
    npm run root-ca
    ```
-2. Run the "Connect one device" wizard
+2. Run the "Connect one device" wizard, leading to the (presumably) one and only
+   chance to download the new thing's private key
 3. Unzip the resulting `connect_device_package.zip` into the subdirectory
    [keys-go-here](keys-go-here/)
 4. Extract the endpoint from the start script
    ```bash
    echo "ENDPOINT=$(npm run grep-endpoint | tail -n 1)" > .env
    ```
-5. Use the default client ID
+5. Use a default client ID (as reflected in the new policy and start script)
    ```bash
    echo "CLIENT_ID=sdk-nodejs-v2" >> .env
    ```
 
-The app is now ready to run
+The topic (also allowed by the policy) and test message are coded in the app,
+which is now ready to run.
 
 ```bash
 npm start
 ```
 
-runs `server.js`, which should take a few seconds to echo a few values through
+runs `server.js`, which should take a few seconds to echo a value or two through
 pub/sub.
