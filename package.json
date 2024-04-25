@@ -1,6 +1,6 @@
 {
   "name": "mqttbb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "MQTT barebones",
   "dependencies": {
     "aws-iot-device-sdk-v2": "^1.17.0",

@@ -4,3 +4,4 @@ node_modules/
 *.pem
 *-Policy
 start.sh
+start.ps1
